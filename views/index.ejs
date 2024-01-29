@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+	<head>
+		<title><%= title %></title>
+		<link rel="stylesheet" href="/stylesheets/style.css" />
+	</head>
+	<body>
+		<h1><%= title %></h1>
+		<p><a href="/new">New Post</a></p>
+		<% msg.forEach(element => { %>
+		<div style="border: 1px solid black; margin: 3px">
+			<p style="padding-left: 5px"><%= element.text %></p>
+			<p style="padding-left: 5px">
+				<i>from</i>: <%= element.user %> | <i>when</i>: <%= element.added %>
+			</p>
+		</div>
+		<%}) %>
+	</body>
 </html>
